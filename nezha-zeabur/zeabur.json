@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "name": "nezha",
+      "type": "dockerfile",
+      "env": { "TZ": "Asia/Shanghai" },
+      "ports": [{ "port": 80, "public": true }],
+      "volumes": [{ "name": "nezha-data", "mount": "/data" }]
+    }
+  ]
+}
