@@ -1,5 +1,10 @@
-FROM ghcr.io/mx-space/komari:latest
+FROM ghcr.io/komari-monitor/komari:1.1.3
 
-EXPOSE 8080
+# 创建数据目录（Zeabur 会挂载）
+VOLUME ["/app/data"]
 
-CMD ["komari", "server", "--host", "0.0.0.0", "--port", "8080"]
+# 暴露 Komari 默认端口
+EXPOSE 25774
+
+# 启动 Komari Server，监听 0.0.0.0
+CMD ["komari", "server", "--host", "0.0.0.0", "--port", "25774"]
